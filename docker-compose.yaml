@@ -13,7 +13,7 @@ services:
   #     restart_policy:
   #       condition: on-failure
   #   ports:
-  #     - "4200:4200"
+  #     - "4000:4000"
 
   # user_db:
   #   image: 'mongo:3.4.1'

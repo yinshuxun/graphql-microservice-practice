@@ -1,11 +1,10 @@
 # graphql-microservice-practice
 
-Graphql microservice demo 
+contains: 
 - one gateway server built in node
 - one custom server built in go
 - one custom server built in node
-
-The server is backed by a mysql database and exposes `Post` and `Comment` models
+- one db server by a mysql database
 
 ## Installation
 Clone this repository
