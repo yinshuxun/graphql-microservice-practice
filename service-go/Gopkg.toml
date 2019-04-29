@@ -1,0 +1,11 @@
+[[constraint]]
+  branch = "master"
+  name = "github.com/graphql-go/handler"
+  
+ [[constraint]]
+  branch = "master"
+  name = "github.com/graphql-go/graphql"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/go-sql-driver/mysql"  
