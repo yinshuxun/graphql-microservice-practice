@@ -20,7 +20,7 @@ const linkTypeDefs = `
 `;
 
 const userLink = new HttpLink({ uri: 'http://localhost:4001/graphql', fetch });
-const blogLink = new HttpLink({ uri: 'http://localhost:4002/graphql', fetch });
+const blogLink = new HttpLink({ uri: 'http://localhost:4003/graphql', fetch });
 
 async function cb() {
   const userSchema = makeRemoteExecutableSchema({

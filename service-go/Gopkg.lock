@@ -2,83 +2,34 @@
 
 
 [[projects]]
-  branch = "master"
   name = "github.com/go-sql-driver/mysql"
   packages = ["."]
-  revision = "d0a548181995c293eb09c61ef80099ba1cdbe8f5"
+  revision = "72cd26f257d44c1114970e19afddcd812016007e"
+  version = "v1.4.1"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/howtographql/graphql-go"
-  packages = [
-    "db",
-    "resolvers"
-  ]
-  revision = "04819498d25a707965211f76e83031098a4e14e5"
-
-[[projects]]
-  branch = "master"
-  name = "github.com/lib/pq"
+  name = "github.com/graphql-go/graphql"
   packages = [
     ".",
-    "oid"
+    "gqlerrors",
+    "language/ast",
+    "language/kinds",
+    "language/lexer",
+    "language/location",
+    "language/parser",
+    "language/printer",
+    "language/source",
+    "language/typeInfo",
+    "language/visitor"
   ]
-  revision = "b609790bd85edf8e9ab7e0f8912750a786177bcf"
+  revision = "2b0b7340d2285b861482047fbf5de0488e021bea"
+  version = "v0.7.8"
 
 [[projects]]
-  name = "github.com/mattes/migrate"
-  packages = [
-    ".",
-    "database",
-    "database/postgres",
-    "source",
-    "source/file"
-  ]
-  revision = "035c07716cd373d88456ec4d701402df52584cb4"
-  version = "v3.0.1"
-
-[[projects]]
-  branch = "master"
-  name = "github.com/neelance/graphql-go"
-  packages = [
-    ".",
-    "errors",
-    "internal/common",
-    "internal/exec",
-    "internal/exec/packer",
-    "internal/exec/resolvable",
-    "internal/exec/selected",
-    "internal/query",
-    "internal/schema",
-    "internal/validation",
-    "introspection",
-    "log",
-    "relay",
-    "trace"
-  ]
-  revision = "10eb949b8f4439212ef19d5d924c47c10c110cc7"
-
-[[projects]]
-  name = "github.com/opentracing/opentracing-go"
-  packages = [
-    ".",
-    "ext",
-    "log"
-  ]
-  revision = "1949ddbfd147afd4d964a9f00b24eb291e0e7c38"
-  version = "v1.0.2"
-
-[[projects]]
-  name = "github.com/satori/go.uuid"
+  name = "github.com/graphql-go/handler"
   packages = ["."]
-  revision = "879c5887cd475cd7864858769793b2ceb0d44feb"
-  version = "v1.1.0"
-
-[[projects]]
-  branch = "master"
-  name = "golang.org/x/net"
-  packages = ["context"]
-  revision = "0a9397675ba34b2845f758fe3cd68828369c6517"
+  revision = "c1267356e6539d975e83bbea383c2bbb861dce5b"
+  version = "v0.2.3"
 
 [[projects]]
   name = "google.golang.org/appengine"
@@ -89,6 +40,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "6d878b44f5dc1b6ed7b8a3cdecb7f0be86a2c4ed095b91c83d9b138e0e5bc018"
+  inputs-digest = "90857f757b74bca4ad6fb0b4e0e53c4c08bf7a9a2f3bb5c566695d2acf94f4f9"
   solver-name = "gps-cdcl"
   solver-version = 1

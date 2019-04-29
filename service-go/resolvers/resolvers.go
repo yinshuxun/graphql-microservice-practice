@@ -3,7 +3,7 @@ package resolvers
 import (
 	"log"
 
-	"graphql-go/db"
+	"graphql-microservice-practice/service-go/db"
 	"github.com/graphql-go/graphql"
 )
 
@@ -31,7 +31,7 @@ func GetBlogs() *graphql.Field {
 	return &graphql.Field{
 		Type: graphql.NewList(CreateType()),
 		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-			
+
 			return db.GetBlogList()
 		},
 	}

@@ -4,9 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	_ "graphql-go/db"
+	_ "graphql-microservice-practice/service-go/db"
 
-	"graphql-go/resolvers"
+	"graphql-microservice-practice/service-go/resolvers"
 	"github.com/graphql-go/graphql"
 	gqlhandler "github.com/graphql-go/handler"
 )
@@ -16,7 +16,7 @@ func main() {
 		"getBlogs": resolvers.GetBlogs(),
 		"getBlogsByUserId": resolvers.GetBlogsByUserId(),
 	}
-	rootQuery := graphql.ObjectConfig{Name: "GetBlog", Fields: fields}
+	rootQuery := graphql.ObjectConfig{Name: "BlogAbout", Fields: fields}
 	schemaConfig := graphql.SchemaConfig{Query: graphql.NewObject(rootQuery)}
 	schema, _ := graphql.NewSchema(schemaConfig)
 
