@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/service01",
+    "types": ["node"],
+    "typeRoots":["../node_modules/@types","../node_modules/@types/type-graphql"]
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}

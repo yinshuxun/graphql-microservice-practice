@@ -1,0 +1,8 @@
+{
+  "exec": "npx ts-node --files -P gateway-service/tsconfig.json gateway-service/index.ts",
+    "ext": "ts",
+    "watch": [
+      "gateway-service"
+    ],
+    "delay": "500"
+}
