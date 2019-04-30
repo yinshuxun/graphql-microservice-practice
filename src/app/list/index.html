@@ -1,10 +1,9 @@
-<div *ngFor="let course of courses | async">
+<div *ngFor="let user of users | async">
   <div class="card" style="width: 100%; margin-top: 10px">
     <div class="card-body">
-      <h5 class="card-title">{{course.title}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">by {{course.author}}</h6>
-      <p class="card-text">{{course.description}}</p>
-      <a href="{{course.url}}" class="card-link">Go to course ...</a>
+      <h5 class="card-title">用户id：{{user.user_id}}</h5>
+      <p class="card-text">用户名:{{user.name}}</p>
+      <p class="card-text">用户的博客: <span *ngFor="let blog of user.blogs">{{blog.name}}，</span></p>
     </div>
   </div>
 </div>

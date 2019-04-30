@@ -19,4 +19,5 @@ docker-compose up
 ```
 ## Getting Started
 1. Run `yarn start`
-2. Open `http://localhost:40000/graphql` for GraphQL Playground
+2. Open `http://localhost:4000/graphql` for GraphQL Playground
+3. Open `http://localhost:4200` for View page

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "graphql-angular-demo": {
+    "graphql-microservice-demo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/graphql-angular-demo",
+            "outputPath": "dist/graphql-microservice-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "graphql-angular-demo:build"
+            "browserTarget": "graphql-microservice-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "graphql-angular-demo:build:production"
+              "browserTarget": "graphql-microservice-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "graphql-angular-demo:build"
+            "browserTarget": "graphql-microservice-demo:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "graphql-angular-demo-e2e": {
+    "graphql-microservice-demo-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "graphql-angular-demo:serve"
+            "devServerTarget": "graphql-microservice-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "graphql-angular-demo:serve:production"
+              "devServerTarget": "graphql-microservice-demo:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "graphql-angular-demo"
+  "defaultProject": "graphql-microservice-demo"
 }

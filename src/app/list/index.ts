@@ -3,7 +3,7 @@ import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import gql from 'graphql-tag';
-import { Course, Query } from '../types';
+import { User, Query } from '../types';
 @Component({
   selector: 'app-list',
   templateUrl: './index.html',
@@ -13,24 +13,27 @@ import { Course, Query } from '../types';
   ]
 })
 export class ListComponent implements OnInit {
-  courses: Observable<Course[]>;
+  users: Observable<User[]>;
   constructor(private apollo: Apollo) { }
   ngOnInit() {
-    this.courses = this.apollo.watchQuery<Query>({
+    this.users = this.apollo.watchQuery<Query>({
       query: gql`
-        query allCourses {
-          getCourseList {
-            id
-            desc
-            title
-            page
+        query {
+          getUserList {
+            user_id
+            name
+            blogs {
+              name
+              blog_id
+              content
+            }
           }
         }
       `
     })
       .valueChanges
       .pipe(
-        map(result => result.data.allCourses)
+        map(result => result.data.getUserList)
       );
   }
 }
