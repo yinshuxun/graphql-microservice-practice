@@ -23,19 +23,21 @@ const userLink = new HttpLink({ uri: 'http://localhost:4001/graphql', fetch });
 const blogLink = new HttpLink({ uri: 'http://localhost:4003/graphql', fetch });
 
 async function cb() {
-  const userSchema = makeRemoteExecutableSchema({
-    schema: await introspectSchema(userLink),
+  const userSchema = await introspectSchema(userLink)
+  const blogSchema = await introspectSchema(blogLink)
+  const userRESchema = makeRemoteExecutableSchema({
+    schema: userSchema,
     link: userLink,
   })
-  const blogSchema = makeRemoteExecutableSchema({
-    schema: await introspectSchema(blogLink),
+  const blogRESchema = makeRemoteExecutableSchema({
+    schema: blogSchema,
     link: blogLink,
   })
 
   const schema = mergeSchemas({
     schemas: [
-      userSchema,
-      blogSchema,
+      userRESchema,
+      blogRESchema,
       linkTypeDefs
     ],
     resolvers: {
@@ -44,11 +46,11 @@ async function cb() {
           fragment: `fragment UserFragment on user { name }`,
           resolve(user, args, context, info) {
             return info.mergeInfo.delegateToSchema({
-              schema: blogSchema,
+              schema: blogRESchema,
               operation: 'query',
-              fieldName: 'getBlogByUserId',
+              fieldName: 'getBlogsByUserId',
               args: {
-                userId: user.user_id,
+                user_id: +user.user_id,
               },
               context,
               info,

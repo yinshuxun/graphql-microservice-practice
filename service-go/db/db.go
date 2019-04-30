@@ -34,7 +34,7 @@ func init() {
         fmt.Println("opon database fail")
         return
     }
-    fmt.Println("connnect success")
+    // fmt.Println("connnect success")
 }
 
 type Blog struct {
@@ -65,8 +65,8 @@ func GetBlogList() ([]*Blog, error) {
 	return blogs, nil
 }
 
-func GetBlogListByUserId(postId int) ([]*Blog, error) {
-	statement := fmt.Sprintf("SELECT * FROM blog where user_id=%d",postId)
+func GetBlogListByUserId(user_id int) ([]*Blog, error) {
+	statement := fmt.Sprintf("SELECT * FROM blog where user_id=%d",user_id)
 	rows, err := db.Query(statement)
 	if err != nil {
 		return nil, err

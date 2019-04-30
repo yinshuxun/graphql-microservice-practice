@@ -7,8 +7,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-func CreateType() *graphql.Object {
-	return graphql.NewObject(graphql.ObjectConfig{
+var BlogType = graphql.NewObject(graphql.ObjectConfig{
 		Name: "Blog",
 		Fields: graphql.Fields{
 			"blog_id": &graphql.Field{
@@ -25,11 +24,11 @@ func CreateType() *graphql.Object {
 			},
 		},
 	})
-}
+
 
 func GetBlogs() *graphql.Field {
 	return &graphql.Field{
-		Type: graphql.NewList(CreateType()),
+		Type: graphql.NewList(BlogType),
 		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 
 			return db.GetBlogList()
@@ -39,7 +38,7 @@ func GetBlogs() *graphql.Field {
 
 func GetBlogsByUserId() *graphql.Field {
 	return &graphql.Field{
-		Type: graphql.NewList(CreateType()),
+		Type: graphql.NewList(BlogType),
 		Args: graphql.FieldConfigArgument{
 			"user_id": &graphql.ArgumentConfig{
 				Type: graphql.NewNonNull(graphql.Int),

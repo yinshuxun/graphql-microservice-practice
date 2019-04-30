@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"ng serve\" \"npm run start:backend\"",
-    "start:backend": "concurrently \"npm run start:backend00\" \"npm run start:backend01\" \"npm run start:backend03\"",
+    "start:backend": "concurrently  \"yarn start:backend01\" \"yarn start:backend03\" \"yarn start:backend00\"",
     "start:backend00": "nodemon --config ./gateway-service/nodemonconfig.json",
     "start:backend01": "nodemon --config ./service01/nodemonconfig.json",
     "start:backend03": "go run service-go/main.go",
