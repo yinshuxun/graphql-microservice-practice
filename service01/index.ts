@@ -1,8 +1,7 @@
 import "reflect-metadata";
 import * as Koa from 'koa';
-import * as bodyParser from 'koa-bodyparser';
 
-import router from './routes'
+import router from './routes';
 
 const app = new Koa();
 
@@ -13,3 +12,4 @@ app.use(router.routes())
 app.listen({ port: 4001 }, () =>
   console.log(`🚀 Server ready at http://localhost:4001`)
 );
+

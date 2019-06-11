@@ -23,23 +23,19 @@ const userLink = new HttpLink({ uri: 'http://localhost:4001/graphql', fetch });
 const blogLink = new HttpLink({ uri: 'http://localhost:4003/graphql', fetch });
 
 async function cb() {
-  const userSchema = await introspectSchema(userLink)
-  const blogSchema = await introspectSchema(blogLink)
+  const userSchema = await introspectSchema(userLink);
+  const blogSchema = await introspectSchema(blogLink);
   const userRESchema = makeRemoteExecutableSchema({
     schema: userSchema,
     link: userLink,
-  })
+  });
   const blogRESchema = makeRemoteExecutableSchema({
     schema: blogSchema,
     link: blogLink,
-  })
+  });
 
   const schema = mergeSchemas({
-    schemas: [
-      userRESchema,
-      blogRESchema,
-      linkTypeDefs
-    ],
+    schemas: [userRESchema, blogRESchema, linkTypeDefs],
     resolvers: {
       User: {
         blogs: {
@@ -58,7 +54,7 @@ async function cb() {
           },
         },
       },
-    }
+    },
   });
 
   const server = new ApolloServer({
@@ -76,4 +72,4 @@ async function cb() {
   );
 }
 
-cb();
+setTimeout(cb, 2000);
