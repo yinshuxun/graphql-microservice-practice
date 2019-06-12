@@ -21,3 +21,8 @@ docker-compose up
 1. Run `yarn start`
 2. Open `http://localhost:4000/graphql` for GraphQL Playground
 3. Open `http://localhost:4200` for View page
+
+## Run ppt
+1. Run `npm i -g nodeppt`
+2. Run `nodeppt serve nodeppt.md`
+3. Open `http://localhost:8080` 

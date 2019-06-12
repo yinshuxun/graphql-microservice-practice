@@ -19,16 +19,18 @@ By shuxun.yin {.text-intro}
 ## 什么是 GraphQL 
 :::
 :::div {.content-left}
-GraphQL 全称叫 "Graph Query Language"，官方解释是 “GraphQL 既是一种用于 API 的查询语言也是一个满足你数据查询的运行时。” 拆解一下，SQL (Structured Query Language) 是结构化查询语言的简称,所以 GraphqQL = Graph + QL ，图形化查询语言，是一种描述客户端如何向服务端请求数据的API语法，类似于 RESTful Api规范。 {.text-content style="font-size:25px"}
+GraphQL 全称叫 "Graph Query Language"，官方解释是 “GraphQL 既是一种用于 API 的查询语言也是一个满足你数据查询的运行时。” 通俗理解一下就是，GraphQL 是一门查询语言，更精确的说 API 查询语言。它能显示服务器提供的不同类型的数据，客户端根据这些数据可以准确地选择它想要的内容。 {.text-content style="font-size:25px"}
 :::
 
 <slide class="bg-black-blue aligncenter" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 :::div {.content-left}
+
 ## GraphQL 特性 
 :::
 :::div {.content-left}
-* [它定义了一套类型系统(Type System)](https://graphql.cn/learn/schema/#type-system)
+* [定义 Schema，来描述接口获取数据的逻辑](https://graphql.cn/learn/schema/#type-system)
 * [查询和变更类型（The Query and Mutation Types）](https://graphql.cn/learn/schema/#the-query-and-mutation-types)
+* [它定义了一套类型系统(Type System)，进行数据模型的抽象](https://graphql.cn/learn/schema/#type-system)
 *  ....
 :::
 
@@ -37,8 +39,11 @@ GraphQL 全称叫 "Graph Query Language"，官方解释是 “GraphQL 既是一�
 ### GraphQL 的延伸，graphical & graph(s)
 :::
 :::div {.content-left}
-* [graphiql](https://github.com/graphql/graphiql)  —— A <b>graphical interactive</b> in-browser GraphQL IDE. 一个让我们在浏览器里用<b>图形交互</b>的方式探索及书写<code>GraphQL</code>的 IDE。</li>
-* [graphql-voyager](https://apis.guru/graphql-voyager/ ) 在 Github API 4.0 开放出的 GraphQL API，它将 Github 所有的对外类型都暴露出来了，提供给开发者开发插件的
+* [apollo-client](https://github.com/apollographql/apollo-client): A fully-featured, production ready caching GraphQL client for every UI framework and GraphQL server，提供了每个UI框架和GraphQL服务器的功能齐全的 GraphQL客户端
+* [graphiql](https://github.com/graphql/graphiql): 一款运行于浏览器的GraphQL IDE，几乎所有的服务端库都会提供这么一个经典的web页面。该页面是一个单页面应用，可以直接在其上运行查询语句，自带代码补全和校错功能，直接查看GraphQL所有的文档(定义好的Schema)
+* [graphql-voyager](https://apis.guru/graphql-voyager/ ): Represent any GraphQL API as an interactive graph. It's time to finally see the graph behind GraphQL! 用交互式的Schema 图表展示任意的 GraphQL API，总算能看见 GraphQL背后的 graph 了! （在 Github API 4.0 开放出的 GraphQL API，它将 Github 所有的对外类型都暴露出来了，提供给开发者开发插件的）
+* [Graphql-Network](https://github.com/Ghirro/graphql-network): Chrome的调试工具，由于GraphQL查询语句是一串字符串，浏览器审查元素看起来非常难看，这个工具则可以将其格式化成我们想要的格式。
+* [GraphDoc](https://github.com/2fd/graphdoc): 可以将文档页面生成静态文档站点。
 :::
   
 <slide class="bg-white-blue aligncenter" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
@@ -231,6 +236,19 @@ GraphQL 全称叫 "Graph Query Language"，官方解释是 “GraphQL 既是一�
       ....
     ]
 ```
+
+<slide class="bg-white-blue aligncenter" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
+
+## GraphQL存在的问题
+graphQl也不是没有缺点，主要有以下几个缺点：
+
+* 改造成本
+要使用GraphQL对数据源进行管理，我们需要对整个后端模型用Graphql类型系统来描述，同时需要改造服务端暴露数据的方式，这无疑成本是巨大的。[swagger to graphql](https://github.com/yarax/swagger-to-graphql)
+
+* 查询性能
+GraphQL 相比于传统的后端服务更容易出现N + 1的问题，尤其是当资源需要通过 RPC 请求从其他微服务中获取时，问题就有些复杂了，并不能通过简单的改变 SQL 查询的方式来解决。这里GraphQL 使用了 DataLoader 从业务层面解决了 N + 1 问题，其核心逻辑就是整合多个请求，通过批量请求的方式解决问题。
+
+* ...当然还会在实践过程中遇到其他问题，需要共同去探索
 
 <slide image="https://source.unsplash.com/UJbHNoVPZW0/">
 

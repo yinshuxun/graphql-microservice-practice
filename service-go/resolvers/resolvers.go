@@ -8,18 +8,23 @@ import (
 )
 
 var BlogType = graphql.NewObject(graphql.ObjectConfig{
-		Name: "Blog",
+    Name: "Blog",
+    Description: "这是博客模型",
 		Fields: graphql.Fields{
 			"blog_id": &graphql.Field{
+        Description: "博客id",
 				Type: graphql.NewNonNull(graphql.Int),
 			},
 			"user_id": &graphql.Field{
+        Description: "博客创建者id",
 				Type: graphql.NewNonNull(graphql.Int),
 			},
 			"name": &graphql.Field{
+        Description: "博客名称",
 				Type: graphql.String,
 			},
 			"content": &graphql.Field{
+        Description: "博客内容",
 				Type: graphql.String,
 			},
 		},
@@ -28,6 +33,7 @@ var BlogType = graphql.NewObject(graphql.ObjectConfig{
 
 func GetBlogs() *graphql.Field {
 	return &graphql.Field{
+    Description: "博客列表",
 		Type: graphql.NewList(BlogType),
 		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 
@@ -38,6 +44,7 @@ func GetBlogs() *graphql.Field {
 
 func GetBlogsByUserId() *graphql.Field {
 	return &graphql.Field{
+    Description: "通过userid获取博客列表",
 		Type: graphql.NewList(BlogType),
 		Args: graphql.FieldConfigArgument{
 			"user_id": &graphql.ArgumentConfig{
