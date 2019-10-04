@@ -1,19 +1,19 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
+    "downlevelIteration": true,
+    "noImplicitAny": false,
     "sourceMap": true,
     "declaration": false,
     "module": "commonjs",
-"target": "es2017",
+    "target": "es2015",
     "moduleResolution": "node",
-    "allowJs": true,
+    "allowJs": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "lib": ["es2017", "esnext.asynciterable","dom"]
+    "lib": ["esnext", "dom"],
+    "typeRoots": ["node_modules/@types","./types"]
   },
-  "exclude": [
-      "**/*.spec.ts",
-      "**/*.stories.ts"
-    ]
+  "exclude": ["**/*.spec.ts", "**/*.stories.ts", "e2e/**/*.js"]
 }

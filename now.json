@@ -1,0 +1,6 @@
+{
+  "name": "graphql-practise",
+  "version": 2,
+  "public": true,
+  "routes": [{ "src": "/", "dest": "/dest/index.html" }]
+}

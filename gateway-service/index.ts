@@ -72,4 +72,4 @@ async function cb() {
   );
 }
 
-setTimeout(cb, 2000);
+setTimeout(cb, 4000);

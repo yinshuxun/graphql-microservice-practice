@@ -1,9 +1,6 @@
 {
   "exec": "npx ts-node --files -P service01/tsconfig.json service01/index.ts",
-    "ext": "ts",
-    "watch": [
-      "service01"
-    ],
-    "delay": "500"
+  "ext": "ts",
+  "watch": ["service01/**"],
+  "delay": "500"
 }
-

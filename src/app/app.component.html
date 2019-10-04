@@ -1,6 +1,46 @@
 <div class="container">
   <nav class="navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Apollo Client For Angular - Sample Application</a>
+    <img
+      src="https://graphql.cn/img/logo.svg"
+      class="rISBZc M4dUYb"
+      title="https://zh.wikipedia.org/zh-tw/GraphQL"
+      alt="graphql的圖片搜尋結果"
+      data-atf="1"
+    />
+    <h1 class="navbar-brand" href="#">Angular GraphQL Demo</h1>
   </nav>
-  <app-list></app-list>
+  <div class="container-body">
+    <div class="app-mutation">
+      <div>
+        添加用户
+        <form class="example-form" [formGroup]="formData">
+          <div>
+            <mat-form-field>
+              <input matInput placeholder="name" autocomplete="off" formControlName="name" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input
+                type="number"
+                matInput
+                placeholder="age"
+                autocomplete="off"
+                formControlName="age"
+              />
+            </mat-form-field>
+          </div>
+          <div>
+            <button mat-flat-button color="primary" (click)="addUser()">
+              添加用户
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="app-query">
+      <h1>Query</h1>
+      <app-list></app-list>
+    </div>
+  </div>
 </div>

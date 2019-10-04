@@ -1,9 +1,7 @@
 <div *ngFor="let user of users | async">
   <div class="card" style="width: 100%; margin-top: 10px">
     <div class="card-body">
-      <h5 class="card-title">用户id：{{user.user_id}}</h5>
-      <p class="card-text">用户名:{{user.name}}</p>
-      <p class="card-text">用户的博客: <span *ngFor="let blog of user.blogs">{{blog.name}}，</span></p>
+      <h5 class="card-title">用户id：{{user.user_id}}  /  用户名：{{user.name}}  /  用户的博客：<span *ngFor="let blog of user.blogs">{{blog.name}}，</span></h5>
     </div>
   </div>
 </div>

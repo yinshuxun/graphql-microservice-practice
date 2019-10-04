@@ -1,4 +1,4 @@
-import "reflect-metadata";
+// import "reflect-metadata";
 import * as Koa from 'koa';
 
 import router from './routes';

@@ -1,0 +1,50 @@
+:host {
+  height: 100%;
+  overflow: hidden;
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 16px;
+    background: #171e26;
+    color: rgb(192, 190, 190);
+    height: 50px;
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+    h1 {
+      color: #e10098;
+      margin: 0;
+      margin-top: 0.25em;
+      font-size: 24px;
+      line-height: 1;
+      margin-left: 20px;
+    }
+  }
+  .container-body {
+    display: flex;
+    .app-query {
+      flex: 2;
+      height: calc(100vh - 50px);
+      overflow-y: scroll;
+      background: #efefef;
+      padding: 20px 20px 50px;
+    }
+    .app-mutation {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 50px);
+      overflow-y: scroll;
+      background: #efefef;
+      padding: 20px 20px 50px;
+    }
+  }
+}
+* {
+  box-sizing: border-box;
+}

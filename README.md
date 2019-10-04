@@ -23,6 +23,5 @@ docker-compose up
 3. Open `http://localhost:4200` for View page
 
 ## Run ppt
-1. Run `npm i -g nodeppt`
-2. Run `nodeppt serve nodeppt.md`
-3. Open `http://localhost:8080` 
+1. Run `npx nodeppt serve nodeppt.md`
+2. Open `http://localhost:8080` 
