@@ -1,6 +1,6 @@
 {
-  "name": "graphql-practise",
+  "name": "gra-ptc",
   "version": 2,
   "public": true,
-  "routes": [{ "src": "/", "dest": "/dest/index.html" }]
+  "routes": [{ "src": "/", "dest": "/nodeppt.html" }]
 }
