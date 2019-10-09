@@ -17,7 +17,7 @@
     "ss": "concurrently \"npm:start-docker-compose\" \"npm:start-backend\" ",
     "start-docker-compose": "docker-compose up",
     "schema:download": "apollo service:download --endpoint=http://localhost:4000/graphql",
-    "schema:generate": "apollo codegen:generate ./api.ts --localSchemaFile=schema.json --includes='src/**/!(*.local).ts' --target typescript --outputFlat",
+    "schema:generate": "apollo codegen:generate --endpoint=http://localhost:4000/graphql --includes='src/app/api/**/*.ts' --target=typescript",
     "gen:types": "yarn schema:download && schema:generate"
   },
   "private": true,

@@ -5,7 +5,7 @@ import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AppComponent } from './app.component';
-import { ListComponent } from './list';
+import { ListComponent } from './features/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatInputModule,
@@ -15,31 +15,24 @@ import {
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ApiModule } from './api/api.module';
 
 @NgModule({
   declarations: [AppComponent, ListComponent],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    ApolloModule,
-    HttpLinkModule,
-    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
+    BrowserModule,
+    HttpClientModule,
+    ApiModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  constructor(apollo: Apollo, httpLink: HttpLink) {
-    apollo.create({
-      link: httpLink.create({ uri: 'http://localhost:4000/graphql' }),
-      cache: new InMemoryCache(),
-    });
-  }
-}
+export class AppModule {}
