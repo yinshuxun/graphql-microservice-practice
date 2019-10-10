@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import gql from 'graphql-tag';
 import { ApiService } from '../../api/api.service';
 import { allUsers_getUserList } from '../../api/queries/__generated__/allUsers';
+import { User } from '../../../../service01/graphql/User-todo';
 @Component({
   selector: 'app-list',
   templateUrl: './index.html',
@@ -14,11 +15,11 @@ import { allUsers_getUserList } from '../../api/queries/__generated__/allUsers';
   ],
 })
 export class ListComponent implements OnInit {
-  users$: Observable<allUsers_getUserList[]>;
+  users$: Observable<any>;
   constructor(private apollo: Apollo, private api: ApiService) {}
   ngOnInit() {
     this.users$ = this.api
       .getAllUsers()
-      .valueChanges.pipe(map(result => result.data.getUserList));
+      .valueChanges.pipe(map((result: any) => result.data.getUserList))
   }
 }

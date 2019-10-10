@@ -1,0 +1,9 @@
+query allUser {
+    getUserList {
+        name
+        user_id
+        blogs {
+            name
+        }
+    }
+}

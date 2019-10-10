@@ -4,6 +4,7 @@ import { UserMutations } from './mutations/user.mutations';
 import { userVariables } from './mutations/__generated__/user';
 import { UserQueries } from './queries/user.queries';
 import { allUsers } from './queries/__generated__/allUsers';
+import { AllUserGQL } from '../generated/graphql';
 
 @Injectable({
   providedIn: 'root',
@@ -13,11 +14,16 @@ export class ApiService {
     private apollo: Apollo,
     private userMutations: UserMutations,
     private userQueries: UserQueries,
+    private allUserGQL: AllUserGQL,
   ) {}
 
   getAllUsers() {
-    return this.apollo.watchQuery<allUsers>({
+    return this.apollo.watchQuery({
       query: this.userQueries.allUsers,
+      notifyOnNetworkStatusChange: true,
+      pollInterval: 2000,
+      fetchPolicy: 'network-only',
+      errorPolicy: 'none',
     });
   }
 

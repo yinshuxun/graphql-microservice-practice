@@ -59,11 +59,11 @@ module.exports = {
     // loaderOptions: {}
   },
 
-  devServer: {
-    host: '0.0.0.0',
-    port: 8080,
-    https: false,
-    proxy: null, // string | Object,
-    disableHostCheck: true,
-  },
+  // devServer: {
+  //   host: '0.0.0.0',
+  //   port: 8080,
+  //   https: false,
+  //   proxy: null, // string | Object,
+  //   disableHostCheck: true,
+  // },
 };
