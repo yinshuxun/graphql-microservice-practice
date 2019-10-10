@@ -5,6 +5,7 @@ import {
   GraphQLInt,
   GraphQLList,
   GraphQLNonNull,
+  buildSchema,
 } from 'graphql';
 import mysqlConnection from './mysql';
 
@@ -17,7 +18,6 @@ const Status = new GraphQLObjectType({
     },
   },
 });
-
 
 const User = new GraphQLObjectType({
   name: 'User',

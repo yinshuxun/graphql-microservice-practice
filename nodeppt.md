@@ -24,13 +24,20 @@ By shuxun.yin {.text-intro}
 
 REST 这个词，是[Roy Thomas Fielding](http://en.wikipedia.org/wiki/Roy_Fielding)在他 2000 年的[博士论文](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)中提出的。Fielding将他对互联网软件的架构原则，定名为REST，即Representational State Transfer的缩写，翻译是"表现层状态转化"。
 
+Restful 则是满足找个原则的架构
 
-如果一个架构符合 REST 原则，就称它为 RESTful 架构。
+<slide class="bg-black-blue" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
+:::column {.vertical-align}
 
+## 聊一聊 Rest & Restful
+---
 二、Restful api 特点  
+
 1、每一个URI代表1种资源
-2、客户端使用GET、POST、PUT、DELETE、PATCH 来表示操作方式的动词对服务端资源进行操作
-3、客户端与服务端之间的交互在请求之间是无状态的，从客户端到服务端的每个请求都必须包含理解请求所必需的信息
+
+2、客户端使用GET、POST、PUT、DELETE、PATCH  这些动词 来表示对资源的不同操作
+
+3、客户端与服务端之间的请求 是无状态的，每个请求都必须带上供服务端解析的所有必需信息
 :::
 
 <slide class="bg-black-blue " image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
@@ -38,16 +45,16 @@ REST 这个词，是[Roy Thomas Fielding](http://en.wikipedia.org/wiki/Roy_Field
 ##  GraphQL 是什么？怎么开始的 ？
 
 ### 一、起源
-GraphQL 的起源可追溯到这个行业向移动的转变。在 2012 年，Facebook 决定，他们需要构建一个新的新闻推送 API，来服务它的移动应用程序，但是受限于 Rest api的延时、带宽的问题，GraphQL API 开始成形。
+GraphQL 的起源可追溯到 行业向移动端转变的时候。在 2012 年，Facebook 决定需要在移动端构建一个新闻推送 API，但是受限于 Rest api的 高延时、高带宽的问题，由此 GraphQL API 应运而生。
 :::
 
 <slide class="bg-black-blue " image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 :::div {.vertical-align}
 ## 二、是什么
 ---
-GraphQL 是一种开源语言，用于从客户端程序来查询数据。
+GraphQL 是一个用于 API 的查询语言，是一个使用基于类型系统来执行查询的服务端运行时。
 
-GraphQL 有一些主要特征：
+主要特征：
 
 - 它允许客户端指定具体所需的数据。
 - 它让从多个数据源汇总取数据变得更简单。
@@ -57,9 +64,9 @@ GraphQL 有一些主要特征：
 
 <slide class="bg-black-blue " image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 
+:::div {.content-left}
 ## 三、核心概念
 ---
-:::div {.content-left}
 
 - [Schema](https://graphql.cn/learn/schema)
 - [类型系统](https://graphql.cn/learn/schema/#type-system)
@@ -67,7 +74,7 @@ GraphQL 有一些主要特征：
 
 :::
 :::div {.content-left}
-<img src="./imgs/schema-demo.png" style="width:80%;height:80%;"  />
+<img src="./imgs/schema-demo.png" style="width:80%;max-width: none;" />
 :::
 
 <slide class="bg-black-blue " image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">

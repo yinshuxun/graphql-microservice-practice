@@ -10,7 +10,7 @@ import { UserMutations } from './mutations/user.mutations';
 
 @NgModule({
   imports: [CommonModule, ApolloModule, HttpLinkModule],
-  providers: [ApiService, UserQueries, UserFragements,UserMutations],
+  providers: [ApiService, UserQueries, UserFragements, UserMutations],
 })
 export class ApiModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
