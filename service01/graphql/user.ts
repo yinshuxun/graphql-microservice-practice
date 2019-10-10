@@ -18,6 +18,7 @@ const Status = new GraphQLObjectType({
   },
 });
 
+
 const User = new GraphQLObjectType({
   name: 'User',
   fields: {

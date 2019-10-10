@@ -4,7 +4,6 @@ import { UserMutations } from './mutations/user.mutations';
 import { userVariables } from './mutations/__generated__/user';
 import { UserQueries } from './queries/user.queries';
 import { allUsers } from './queries/__generated__/allUsers';
-import { AllUserGQL } from '../generated/graphql';
 
 @Injectable({
   providedIn: 'root',
@@ -14,16 +13,14 @@ export class ApiService {
     private apollo: Apollo,
     private userMutations: UserMutations,
     private userQueries: UserQueries,
-    private allUserGQL: AllUserGQL,
   ) {}
 
   getAllUsers() {
+    console.log('graphql-tag-ast',this.userQueries.allUsers)
     return this.apollo.watchQuery({
       query: this.userQueries.allUsers,
-      notifyOnNetworkStatusChange: true,
       pollInterval: 2000,
       fetchPolicy: 'network-only',
-      errorPolicy: 'none',
     });
   }
 
@@ -31,13 +28,6 @@ export class ApiService {
     return this.apollo.mutate({
       mutation: this.userMutations.createUser,
       variables,
-      // optimisticResponse: {
-      //   __typename: 'Mutation',
-      //   createUser: {
-      //     __typename: 'Status',
-      //     code: this.code,
-      //   },
-      // },
     });
   }
 }

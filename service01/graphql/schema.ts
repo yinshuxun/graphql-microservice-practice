@@ -1,4 +1,4 @@
-import { GraphQLSchema, GraphQLObjectType, GraphQLInputObjectType } from 'graphql';
+import { GraphQLSchema, GraphQLObjectType, GraphQLInputObjectType, buildSchema } from 'graphql';
 
 import { getUserList, getUserByParam,createUser } from './user';
 

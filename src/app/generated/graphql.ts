@@ -115,3 +115,9 @@ export const AllUserDocument = gql`
     document = AllUserDocument;
     
   }
+export namespace AllUser {
+  export type Variables = AllUserQueryVariables;
+  export type Query = AllUserQuery;
+  export type GetUserList = AllUserQuery['getUserList'][0];
+  export type Blogs = AllUserQuery['getUserList'][0]['blogs'][0];
+}
