@@ -24,7 +24,7 @@ By shuxun.yin {.text-intro}
 
 REST 这个词，是[Roy Thomas Fielding](http://en.wikipedia.org/wiki/Roy_Fielding)在他 2000 年的[博士论文](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)中提出的。Fielding将他对互联网软件的架构原则，定名为REST，即Representational State Transfer的缩写，翻译是"表现层状态转化"。
 
-Restful 则是满足找个原则的架构
+符合REST 原则的架构可以称之为 Restful 架构
 
 <slide class="bg-black-blue" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 :::column {.vertical-align}
