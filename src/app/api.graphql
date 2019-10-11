@@ -1,5 +1,6 @@
 query allUser {
     getUserList {
+        __typename
         name
         user_id
         blogs {

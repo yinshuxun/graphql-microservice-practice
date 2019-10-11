@@ -99,6 +99,7 @@ export type AllUserQuery = (
 export const AllUserDocument = gql`
     query allUser {
   getUserList {
+    
     name
     user_id
     blogs {

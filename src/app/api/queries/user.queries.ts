@@ -9,6 +9,7 @@ export class UserQueries {
   allUsers = gql`
     query allUsers {
       getUserList {
+        __typename
         ...userFragment
       }
     }

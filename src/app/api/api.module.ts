@@ -16,7 +16,32 @@ export class ApiModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
       link: httpLink.create({ uri: 'http://localhost:4000/graphql' }),
-      cache: new InMemoryCache(),
+      cache: new InMemoryCache({
+        addTypename: true,
+        dataIdFromObject: v => {
+          switch (v.__typename) {
+            case 'Blog':
+              return 'blog_' + v['blog_id'];
+            case 'User':
+              return 'user_' + v['user_id'];
+            default:
+              return v.id;
+          }
+        },
+        
+      }),
+      defaultOptions: {
+        watchQuery: {
+            fetchPolicy: 'cache-and-network',
+            errorPolicy: 'ignore',
+        },
+        query: {
+            fetchPolicy: 'network-only',
+            errorPolicy: 'all',
+        },
+        mutate: {
+            errorPolicy: 'all'
+        }
     });
   }
 }

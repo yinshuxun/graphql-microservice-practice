@@ -16,6 +16,7 @@ export class UserFragements {
       name
       age
       user_id
+
       blogs {
         ...blogFragment
       }

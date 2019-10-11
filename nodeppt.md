@@ -22,20 +22,22 @@ By shuxun.yin {.text-intro}
 
 一、起源
 
-REST 这个词，是[Roy Thomas Fielding](http://en.wikipedia.org/wiki/Roy_Fielding)在他 2000 年的[博士论文](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)中提出的。Fielding将他对互联网软件的架构原则，定名为REST，即Representational State Transfer的缩写，翻译是"表现层状态转化"。
+REST 这个词，是[Roy Thomas Fielding](http://en.wikipedia.org/wiki/Roy_Fielding)在他 2000 年的[博士论文](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)中提出的。Fielding 将他对互联网软件的架构原则，定名为 REST，即 Representational State Transfer 的缩写，翻译是"表现层状态转化"。
 
-符合REST 原则的架构可以称之为 Restful 架构
+符合 REST 原则的架构可以称之为 Restful 架构
 
 <slide class="bg-black-blue" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 :::column {.vertical-align}
 
 ## 聊一聊 Rest & Restful
+
 ---
-二、Restful api 特点  
 
-1、每一个URI代表1种资源
+二、Restful api 特点
 
-2、客户端使用GET、POST、PUT、DELETE、PATCH  这些动词 来表示对资源的不同操作
+1、每一个 URI 代表 1 种资源
+
+2、客户端使用 GET、POST、PUT、DELETE、PATCH 这些动词 来表示对资源的不同操作
 
 3、客户端与服务端之间的请求 是无状态的，每个请求都必须带上供服务端解析的所有必需信息
 :::
@@ -45,7 +47,8 @@ REST 这个词，是[Roy Thomas Fielding](http://en.wikipedia.org/wiki/Roy_Field
 ##  GraphQL 是什么？怎么开始的 ？
 
 ### 一、起源
-GraphQL 的起源可追溯到 行业向移动端转变的时候。在 2012 年，Facebook 决定需要在移动端构建一个新闻推送 API，但是受限于 Rest api的 高延时、高带宽的问题，由此 GraphQL API 应运而生。
+
+GraphQL 的起源可追溯到 行业向移动端转变的时候。在 2012 年，Facebook 决定需要在移动端构建一个新闻推送 API，但是受限于 Rest api 的 高延时、高带宽的问题，由此 GraphQL API 应运而生。
 :::
 
 <slide class="bg-black-blue " image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
@@ -65,7 +68,9 @@ GraphQL 是一个用于 API 的查询语言，是一个使用基于类型系统�
 <slide class="bg-black-blue " image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 
 :::div {.content-left}
+
 ## 三、核心概念
+
 ---
 
 - [Schema](https://graphql.cn/learn/schema)
@@ -96,15 +101,16 @@ GraphQL 是一个用于 API 的查询语言，是一个使用基于类型系统�
 :::div {.vertical-align}
 
 ##### GraphQL 其他开源工具
-* [graphiql](https://github.com/graphql/graphiql): 一款运行于浏览器的GraphQL IDE，几乎所有的服务端库都会提供这么一个经典的web页面。该页面是一个单页面应用，可以直接在其上运行查询语句，自带代码补全和校错功能，直接查看GraphQL所有的文档(定义好的Schema)
-* Apollo Client DevTools Chrome Extension
-* IDEA / EDITOR Plugins 
-* [graphql-voyager](https://apis.guru/graphql-voyager/ ): Represent any GraphQL API as an interactive graph. It's time to finally see the graph behind GraphQL! 用交互式的Schema 图表展示任意的 GraphQL API，总算能看见 GraphQL背后的 graph 了! （在 Github API 4.0 开放出的 GraphQL API，它将 Github 所有的对外类型都暴露出来了，提供给开发者开发插件的）
-* [Graphql-Network](https://github.com/Ghirro/graphql-network): Chrome的调试工具，由于GraphQL查询语句是一串字符串，浏览器审查元素看起来非常难看，这个工具则可以将其格式化成我们想要的格式。
-* [GraphDoc](https://github.com/2fd/graphdoc): 可以将文档页面生成静态文档站点。
-* [Graphql Codegen](https://github.com/dotansimha/graphql-code-generator): 可扩展的graphql 代码生成工具
-:::
-:::
+
+- [graphiql](https://github.com/graphql/graphiql): 一款运行于浏览器的 GraphQL IDE，几乎所有的服务端库都会提供这么一个经典的 web 页面。该页面是一个单页面应用，可以直接在其上运行查询语句，自带代码补全和校错功能，直接查看 GraphQL 所有的文档(定义好的 Schema)
+- Apollo Client DevTools Chrome Extension
+- IDEA / EDITOR Plugins
+- [graphql-voyager](https://apis.guru/graphql-voyager/): Represent any GraphQL API as an interactive graph. It's time to finally see the graph behind GraphQL! 用交互式的 Schema 图表展示任意的 GraphQL API，总算能看见 GraphQL 背后的 graph 了! （在 Github API 4.0 开放出的 GraphQL API，它将 Github 所有的对外类型都暴露出来了，提供给开发者开发插件的）
+- [Graphql-Network](https://github.com/Ghirro/graphql-network): Chrome 的调试工具，由于 GraphQL 查询语句是一串字符串，浏览器审查元素看起来非常难看，这个工具则可以将其格式化成我们想要的格式。
+- [GraphDoc](https://github.com/2fd/graphdoc): 可以将文档页面生成静态文档站点。
+- [Graphql Codegen](https://github.com/dotansimha/graphql-code-generator): 可扩展的 graphql 代码生成工具
+  :::
+  :::
 
 <slide class="bg-white-blue" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 :::div {.vertical-align}
@@ -163,21 +169,12 @@ export class UserFragements {
     }
   `;
 
-  userFragment = gql`
-    fragment userFragment on User {
-      name
-      age
-      user_id
-      blogs {
-        ...blogFragment
-      }
-    }
-    ${this.blogFragment}
-  `;
+userFragment = gql`fragment userFragment on User { name age user_id blogs { ...blogFragment } } ${this.blogFragment}`;
 }
-```
+
+````
 :::
-  
+
 <slide class="bg-white-blue" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 :::div {.content-left}
 ## Authentication
@@ -195,6 +192,14 @@ export class UserFragements {
 * fragmentMatcher：默认情况下，InMemoryCache使用 heuristic fragment matcher。如果您在unions和interface上使用fragment，则需要使用* * IntrospectionFragmentMatcher。有关更多信息，请阅读我们的指南，为unions和interface设置fragment匹配。
 * cacheRedirects（以前称为cacheResolvers或customResolvers）：在请求发生之前将查询重定向到缓存中的另一个条目的函数映射。如果您有一个项目列表并希望在查询单个项目的详细信息页面上使用列表查询中的数据，这将非常有用。更多关于这一点。
 
+<slide class="bg-white-blue" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
+## Caching
+#### Fetch Policy
+---
+* cache-first: default
+* cache-only: nofetch
+* network-only:forcefetch
+* cache-and-network:at same time
 
 <slide class="bg-white-blue aligncenter" image="https://source.unsplash.com/n9WPPWiPPJw/ .dark">
 
@@ -278,7 +283,7 @@ export class UserFragements {
     "user_id": 1
   }
 ]
-```
+````
 
 ---
 
